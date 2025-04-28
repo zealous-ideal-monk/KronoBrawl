@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Master</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-trophy"></i>
+                <h1>Tournament Master</h1>
+            </div>
+            <p>Create professional tournament schedules in seconds</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="control-panel">
+                <h2><i class="fas fa-cog"></i> Tournament Settings</h2>
+                
+                <div class="form-group">
+                    <label for="tournament-name"><i class="fas fa-heading"></i> Tournament Name:</label>
+                    <input type="text" id="tournament-name" placeholder="Enter tournament name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="tournament-type"><i class="fas fa-chess"></i> Tournament Type:</label>
+                    <select id="tournament-type">
+                        <option value="round-robin">Round Robin</option>
+                        <option value="single-elimination">Single Elimination</option>
+                        <option value="double-elimination">Double Elimination</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-users"></i> Teams:</label>
+                    <div class="add-team-form">
+                        <input type="text" id="new-team" placeholder="Enter team name">
+                        <button id="add-team-btn" class="secondary-btn">
+                            <i class="fas fa-plus"></i> Add Team
+                        </button>
+                    </div>
+                    <div id="teams-list" class="teams-list">
+                        <!-- Teams will be loaded here -->
+                    </div>
+                </div>
+                
+                <button id="generate-btn" class="primary-btn">
+                    <i class="fas fa-magic"></i> Generate Schedule
+                </button>
+            </div>
+
+            <div class="schedule-view">
+                <div class="schedule-header">
+                    <h2><i class="fas fa-calendar-alt"></i> Tournament Schedule</h2>
+                    <div class="tournament-info">
+                        <span id="tournament-title">No tournament created</span>
+                        <span id="tournament-type-badge" class="badge">Select type</span>
+                    </div>
+                </div>
+                
+                <div id="schedule-output" class="schedule-output">
+                    <div class="empty-state">
+                        <i class="fas fa-calendar-plus"></i>
+                        <p>Generate a schedule to see matches</p>
+                    </div>
+                </div>
+                
+                <div class="schedule-actions">
+                    <button id="export-btn" class="secondary-btn" disabled>
+                        <i class="fas fa-file-export"></i> Export Schedule
+                    </button>
+                    <button id="print-btn" class="secondary-btn" disabled>
+                        <i class="fas fa-print"></i> Print
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
